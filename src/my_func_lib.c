@@ -19,21 +19,23 @@ void my_putstr(char *str)
     }
 }
 
-char *my_strdup(char *src)
+void my_put_nbr(int nb)
 {
-    int a = 0;
-    char *rep;
-    int size = 0;
-    while (src[size] != '\0')
-        size++;
-    rep = malloc(sizeof(char) * size + 1);
-    while (src[a] != '\0') {
-        rep[a] = src[a];
-        a = a + 1;
+    int a;
+    if (nb < 0) {
+        my_putchar('-');
+        nb = nb * (-1);
     }
-    if (size > a)
-        rep[a] = '\0';
-    return (rep);
+    if (nb >= 0) {
+        if (nb >= 10) {
+            a = (nb % 10);
+            nb = (nb - a) / 10;
+            my_put_nbr(nb);
+            my_putchar(48 + a);
+        }
+        else
+            my_putchar(48 + nb % 10);
+    }
 }
 
 int my_strlen(char *str)

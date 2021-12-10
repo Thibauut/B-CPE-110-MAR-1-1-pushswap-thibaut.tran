@@ -6,13 +6,13 @@
 ##
 
 SRC	=	src/my_func_lib.c	\
-		src/my_func_lib_2.c	\
-		src/init_link_chain.c	\
-		src/func_link_chain.c	\
-		src/func_op.c	\
+		src/my_init_link_list.c	\
+		src/my_func_link_list.c	\
+		src/my_func_op.c	\
+		src/my_sort.c	\
 		push_swap.c
 
-# OBJ	=	$(SRC:.c=.o)
+OBJ	=	$(SRC:.c=.o)
 
 NAME	=	push_swap
 

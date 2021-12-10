@@ -8,42 +8,17 @@
 #include "../include/my.h"
 #include "../include/link_list.h"
 
-my_list_t *add_element(my_list_t *list, int nb, int pos)
-{
-    my_list_t *prev = list;
-    my_list_t *curr = list;
-    int i = 0;
-    my_list_t *cell = create_cell(nb);
-    if (list == NULL)
-        return (cell);
-    if (pos == 0) {
-        cell->next = list;
-        return (cell);
-    }
-    for (; i < pos; i += 1) {
-        prev = curr;
-        curr = curr->next;
-    }
-    prev->next = cell;
-    cell->next = curr;
-    return (list);
-}
-
 int get_element(my_list_t *list, int pos)
 {
-    int i = 0;
     if (list == 0)
         return (84);
-    while (i < pos) {
+    for (int i = 0; i < pos; i += 1)
         list = list->next;
-        i += 1;
-    }
     return (list->nb);
 }
 
 my_list_t *set_element_at(my_list_t *list, int nb, int pos)
 {
-    int i = 0;
     my_list_t *cell = create_cell(nb);
     my_list_t *prev = list;
     my_list_t *curr = list;
@@ -53,7 +28,7 @@ my_list_t *set_element_at(my_list_t *list, int nb, int pos)
         cell->next = list;
         return (cell);
     }
-    for (; i < pos; i += 1) {
+    for (int i = 0; i < pos; i += 1) {
         prev = curr;
         curr = curr->next;
     }
@@ -75,29 +50,17 @@ my_list_t *free_element_at(my_list_t *list, int pos)
 {
     my_list_t *prev = list;
     my_list_t *curr = list;
-    int i = 0;
     if (list == NULL)
     return (NULL);
     if (pos == 0) {
         list = free_first_element(list);
         return list;
     }
-    while (i < pos) {
+    for (int i = 0; i < pos; i += 1) {
         prev = curr;
         curr = curr->next;
-        i += 1;
     }
     prev->next = curr->next;
     free(curr);
     return (list);
-}
-
-void my_show_link_list(my_list_t *list)
-{
-    while(list != NULL) {
-        my_put_nbr(list->nb);
-        my_putstr(" -> ");
-        list = list->next;
-    }
-    my_putstr("NULL");
 }

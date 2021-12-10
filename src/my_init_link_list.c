@@ -18,6 +18,26 @@ my_list_t *create_cell(int nb)
     return (cell);
 }
 
+my_list_t *add_element(my_list_t *list, int nb, int pos)
+{
+    my_list_t *prev = list;
+    my_list_t *curr = list;
+    my_list_t *cell = create_cell(nb);
+    if (list == NULL)
+        return (cell);
+    if (pos == 0) {
+        cell->next = list;
+        return (cell);
+    }
+    for (int i = 0; i < pos; i += 1) {
+        prev = curr;
+        curr = curr->next;
+    }
+    prev->next = cell;
+    cell->next = curr;
+    return (list);
+}
+
 my_list_t *free_list(my_list_t *list)
 {
     my_list_t *tmp = NULL;
@@ -27,6 +47,16 @@ my_list_t *free_list(my_list_t *list)
         list = tmp;
     }
     my_putchar('\n');
+}
+
+void my_show_link_list(my_list_t *list)
+{
+    while(list != NULL) {
+        my_put_nbr(list->nb);
+        my_putstr(" -> ");
+        list = list->next;
+    }
+    my_putstr("NULL");
 }
 
 int list_len(my_list_t *list)
