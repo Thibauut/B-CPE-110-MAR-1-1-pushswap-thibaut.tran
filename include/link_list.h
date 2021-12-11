@@ -17,23 +17,30 @@ typedef struct my_list_s {
     struct my_list_s *next;
 } my_list_t;
 
+typedef struct my_s {
+    int i;
+    int j;
+} my_t;
+
 #ifndef LINK_LIST_
 #define LINK_LIST_
 
-my_list_t *create_cell(int nb);
-my_list_t *add_element(my_list_t *list, int nb, int pos);
-void my_show_link_list(my_list_t *list);
-my_list_t *free_list(my_list_t *list);
 int list_len(my_list_t *list);
-my_list_t *my_sort(my_list_t *list_a, my_list_t *list_b);
+void my_show_link_list(my_list_t *list);
 int get_element(my_list_t *list, int pos);
+my_list_t *create_cell(int nb);
+my_list_t *free_list(my_list_t *list);
+my_list_t *add_element(my_list_t *list, int nb, int pos);
 my_list_t *set_element_at(my_list_t *list, int nb, int pos);
 my_list_t *free_element_at(my_list_t *list, int pos);
 my_list_t *free_first_element(my_list_t *list);
 
 my_list_t *pb(my_list_t **list_a, my_list_t **list_b);
-my_list_t *rb(my_list_t **list_a, my_list_t **list_b);
+my_list_t *rb(my_list_t **list_b);
 my_list_t *pa(my_list_t **list_a, my_list_t **list_b);
-my_list_t *ra(my_list_t **list_a, my_list_t **list_b);
+my_list_t *ra(my_list_t **list_a);
+
+my_list_t *my_sort(my_list_t *list_a, my_list_t *list_b);
+my_list_t *my_radix_sort(my_list_t *list_a, my_list_t *list_b);
 
 #endif

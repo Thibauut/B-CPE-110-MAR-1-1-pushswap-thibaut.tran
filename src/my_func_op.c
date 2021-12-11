@@ -17,7 +17,7 @@ my_list_t *pb(my_list_t **list_a, my_list_t **list_b)
     write(1, "pb ", 3);
 }
 
-my_list_t *rb(my_list_t **list_a, my_list_t **list_b)
+my_list_t *rb(my_list_t **list_b)
 {
     int first_elem = 0;
     int last_elem = 0;
@@ -37,7 +37,7 @@ my_list_t *pa(my_list_t **list_a, my_list_t **list_b)
     write(1, "pa ", 3);
 }
 
-my_list_t *ra(my_list_t **list_a, my_list_t **list_b)
+my_list_t *ra(my_list_t **list_a)
 {
     int first_elem = 0;
     int last_elem = 0;
