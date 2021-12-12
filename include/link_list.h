@@ -20,6 +20,7 @@ typedef struct my_list_s {
 typedef struct my_s {
     int i;
     int j;
+    int k;
 } my_t;
 
 #ifndef LINK_LIST_
@@ -40,7 +41,7 @@ my_list_t *rb(my_list_t **list_b);
 my_list_t *pa(my_list_t **list_a, my_list_t **list_b);
 my_list_t *ra(my_list_t **list_a);
 
-my_list_t *my_sort(my_list_t *list_a, my_list_t *list_b);
-my_list_t *my_radix_sort(my_list_t *list_a, my_list_t *list_b);
+my_list_t *my_radix(my_list_t *list_a, my_list_t *list_b, int count);
+my_list_t *my_radix_neg(my_list_t *list_a, my_list_t *list_b, int count);
 
 #endif
