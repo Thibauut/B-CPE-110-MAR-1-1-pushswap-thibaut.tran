@@ -37,9 +37,9 @@ my_list_t *free_element_at(my_list_t *list, int pos);
 my_list_t *free_first_element(my_list_t *list);
 
 my_list_t *pb(my_list_t **list_a, my_list_t **list_b);
-my_list_t *rb(my_list_t **list_b);
 my_list_t *pa(my_list_t **list_a, my_list_t **list_b);
-my_list_t *ra(my_list_t **list_a);
+my_list_t *rb(my_list_t **list_b, int b_len);
+my_list_t *ra(my_list_t **list_a, int a_len);
 
 my_list_t *my_radix(my_list_t *list_a, my_list_t *list_b, int count);
 my_list_t *my_radix_neg(my_list_t *list_a, my_list_t *list_b, int count);
