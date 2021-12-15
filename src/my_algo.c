@@ -50,4 +50,5 @@ my_list_t *my_radix_neg(my_list_t *list_a, my_list_t *list_b, int count)
         ra(&list_a, a_len), b_len -= 1, write(1, "ra ", 3);
     }
     my_putstr("rb\n");
+    my_show_link_list(list_a);
 }

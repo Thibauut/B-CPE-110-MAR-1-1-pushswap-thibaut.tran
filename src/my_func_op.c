@@ -41,3 +41,17 @@ my_list_t *ra(my_list_t **list_a, int a_len)
     *list_a = free_element_at(*list_a, 0);
     *list_a = set_element_at(*list_a, first_elem, a_len);
 }
+
+int verif_list(my_list_t *list_a, int count)
+{
+    int verif = 0, i = 0;
+    while (i < count - 1) {
+        if (list_a->nb < list_a->next->nb)
+            verif = 1;
+        else
+            verif = 0;
+        i += 1;
+        list_a = list_a->next;
+    }
+    return (verif);
+}
