@@ -51,7 +51,7 @@ my_list_t *free_element_at(my_list_t *list, int pos)
     my_list_t *prev = list;
     my_list_t *curr = list;
     if (list == NULL)
-    return (NULL);
+        return (NULL);
     if (pos == 0) {
         list = free_first_element(list);
         return list;

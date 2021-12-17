@@ -51,7 +51,7 @@ my_list_t *free_list(my_list_t *list)
 
 void my_show_link_list(my_list_t *list)
 {
-    while(list != NULL) {
+    while (list != NULL) {
         my_put_nbr(list->nb);
         my_putstr(" -> ");
         list = list->next;

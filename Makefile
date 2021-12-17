@@ -9,7 +9,7 @@ SRC	=	src/my_func_lib.c	\
 		src/my_init_link_list.c	\
 		src/my_func_link_list.c	\
 		src/my_func_op.c	\
-		src/my_algo.c	\
+		src/my_radix_sort.c	\
 		push_swap.c
 
 OBJ	=	$(SRC:.c=.o)

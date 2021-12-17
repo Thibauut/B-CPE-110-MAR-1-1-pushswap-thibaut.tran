@@ -14,9 +14,8 @@ void my_putchar(char c)
 
 void my_putstr(char *str)
 {
-    for (int i = 0; str[i]; i += 1) {
+    for (int i = 0; str[i]; i += 1)
         write(1, &str[i], 1);
-    }
 }
 
 void my_put_nbr(int nb)

@@ -25,9 +25,6 @@ int main(int ac, char **av)
         count += 1;
         i += 1;
     }
-    if (verif_list(list_a, count) != 1)
-        my_radix(list_a, list_b, count);
-    else
-        my_putchar('\n');
-    return 0;
+    my_radix(list_a, list_b, count);
+    return (0);
 }
